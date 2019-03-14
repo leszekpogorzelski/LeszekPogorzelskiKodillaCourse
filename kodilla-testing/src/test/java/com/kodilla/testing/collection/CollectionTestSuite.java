@@ -30,9 +30,9 @@ public class CollectionTestSuite {
         for (int i = 0; i < 10; i++){
             numbers.add(i);
         }
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(numbers);
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
-        oddNumbersExterminator.exterminate();
+        oddNumbersExterminator.exterminate(numbers);
         System.out.println("Testing:");
         for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++ ) {
                System.out.print(oddNumbersExterminator.getOddNumbers(i) + ", ");
@@ -40,7 +40,7 @@ public class CollectionTestSuite {
         System.out.println();
         //Then
        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++){
-            Assert.assertEquals((oddNumbersExterminator.getOddNumbers(i)%2 == 0), true);
+            Assert.assertEquals((oddNumbersExterminator.getOddNumbers(i) % 2 == 0), true);
         }
     }
 
@@ -49,9 +49,9 @@ public class CollectionTestSuite {
         //Given
         ArrayList<Integer> numbers = new ArrayList<Integer>();
 
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(numbers);
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
-        oddNumbersExterminator.exterminate();
+        oddNumbersExterminator.exterminate(numbers);
         System.out.println("Testing:");
         for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++ ) {
             System.out.print(oddNumbersExterminator.getOddNumbers(i) + ", ");

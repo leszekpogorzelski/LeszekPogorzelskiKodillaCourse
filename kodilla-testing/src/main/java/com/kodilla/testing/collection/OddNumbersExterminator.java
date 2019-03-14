@@ -11,12 +11,12 @@ public class OddNumbersExterminator {
 
 
 
-   public OddNumbersExterminator(ArrayList<Integer> numbers){
-        this.numbers = numbers;
-        }
-    public ArrayList<Integer> exterminate(){
+   public OddNumbersExterminator(){
 
-        if (numbers.size()==0){
+        }
+    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers){
+
+        if (numbers.size() == 0){
             System.out.println("Tablica jest pusta!");
         }
         else {
