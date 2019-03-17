@@ -29,6 +29,7 @@ public class ShapeCollector {
     public Shape getFigure(int n){
         return shapes.get(n);
     }
+
     public String showFigures(int n){
         String show = shapes.get(n).getShapeName() + " " + shapes.get(n).getField();
         return show;
