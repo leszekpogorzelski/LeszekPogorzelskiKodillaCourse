@@ -14,10 +14,12 @@ public final class World {
 
     }
 
-    public List<BigDecimal> getWorldPopulation() {
+    public BigDecimal getWorldPopulation() {
         return continentsPopulation.stream()
                 .flatMap(continent -> continent.getCountriesPopulation().stream())
                 .map(Country::getPeopleQuantity)
-                .collect(Collectors.toList());
-    }
+                .collect(Collectors.toList()).stream()
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+
+         }
 }

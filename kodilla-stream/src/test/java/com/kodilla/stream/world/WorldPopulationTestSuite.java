@@ -43,8 +43,8 @@ public class WorldPopulationTestSuite {
 
         //When
 
-        BigDecimal totalPeople = world.getWorldPopulation().stream()
-                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+        BigDecimal totalPeople = world.getWorldPopulation();
+
         //Then
         BigDecimal expectedSand = new BigDecimal("49876543206");
         Assert.assertEquals(expectedSand, totalPeople);
