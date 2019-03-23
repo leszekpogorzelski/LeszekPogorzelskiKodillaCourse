@@ -2,7 +2,7 @@ package com.kodilla.stream.book;
 
 import java.util.*;
 
-public class BookDirectory {
+public final class BookDirectory {
 
     private final List<Book> theBookList = new ArrayList<>();
 
