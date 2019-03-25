@@ -151,20 +151,17 @@ public class BoardTestSuite {
         long expectedProjectCounter = project.getTaskLists().stream()
                 .filter(daysSpent::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .filter(t -> t.getCreated().isBefore(LocalDate.now()))
                 .count();
 
        long totaldays = project.getTaskLists().stream()
                .filter(daysSpent::contains)
                .flatMap(tl -> tl.getTasks().stream())
-               .filter(t -> t.getCreated().isBefore(LocalDate.now()))
                .map(o -> Period.between(o.getCreated(), LocalDate.now()).getDays())
                .mapToInt(n -> n.intValue()).sum();
 
     double optionalDouble = project.getTaskLists().stream()
                 .filter(daysSpent::contains)
                .flatMap(tl -> tl.getTasks().stream())
-                .filter(t -> t.getCreated().isBefore(LocalDate.now()))
                 .map(o -> Period.between(o.getCreated(), LocalDate.now()).getDays())
                 .mapToInt(n -> n.intValue())
                 .average().getAsDouble();
@@ -172,10 +169,10 @@ public class BoardTestSuite {
         double average = totaldays/expectedProjectCounter;
 
         //Then
-        Assert.assertEquals(2, expectedProjectCounter );
+        Assert.assertEquals(3, expectedProjectCounter );
         Assert.assertEquals(30, totaldays);
-        Assert.assertEquals(15.0, average, 0.01 );
-        Assert.assertEquals(15.0, optionalDouble, 0.01);
+        Assert.assertEquals(10.0, average, 0.01 );
+        Assert.assertEquals(10.0, optionalDouble, 0.01);
     }
 
 
