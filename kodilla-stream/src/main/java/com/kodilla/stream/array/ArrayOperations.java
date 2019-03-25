@@ -10,10 +10,10 @@ public interface ArrayOperations {
                 .map(n -> numbers[n])
                 .forEach(System.out::println);
 
+
         OptionalDouble expected = IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
                 .average();
-
 
         return expected.getAsDouble() ;
     }
