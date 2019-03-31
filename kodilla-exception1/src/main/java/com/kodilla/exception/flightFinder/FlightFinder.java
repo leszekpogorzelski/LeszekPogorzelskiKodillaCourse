@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class FlightFinder  {
-    private final Map<String, Boolean> flightDestinations = new HashMap<>();
+    private static final Map<String, Boolean> flightDestinations = new HashMap<>();
 
+    public FlightFinder(){
+    }
 
     public void addMap(){
         flightDestinations.put("Poznań", true);
@@ -13,14 +15,13 @@ public final class FlightFinder  {
         flightDestinations.put("Kraków", true);
         flightDestinations.put("Rzeszów", true);
     }
-    public  Map<String, Boolean> flightMap() {
+
+    public static Map<String, Boolean> flightMap() {
          return new HashMap<String, Boolean>(flightDestinations);
     }
 
-    public static Boolean findFlight(Flight flight) throws RouteNotFoundException {
-                FlightFinder flightFinder = new FlightFinder();
-                flightFinder.addMap();
-             Long tryCounter = flightFinder.flightMap().entrySet().stream()
+    public Boolean findFlight(Flight flight) throws RouteNotFoundException {
+                    Long tryCounter = FlightFinder.flightMap().entrySet().stream()
                     .map(Map.Entry::getKey)
                     .filter(s -> s.equals(flight.getArrivalAirport()))
                     .count();
@@ -28,7 +29,7 @@ public final class FlightFinder  {
                          return true;
                      }
                      else{
-                         throw new RouteNotFoundException();
+                         throw new RouteNotFoundException("Niestety nie obsługujemy tego połączenia.\n");
                      }
     }
 }

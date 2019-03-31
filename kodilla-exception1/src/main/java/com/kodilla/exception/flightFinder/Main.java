@@ -20,17 +20,23 @@ public class Main {
         flights.add(flight3);
 
         System.out.println("Wyszukiwarka połączeń lotniczych.\n");
+        FlightFinder flightFinder = new FlightFinder();
+        flightFinder.addMap();
 
-        for(int i = 0; i < flights.size(); i++ )
-        try{
-            System.out.println("\nWyszukuję połączenie do: " + flights.get(i).getArrivalAirport());
-            FlightFinder.findFlight(flights.get(i));
-            System.out.println("Znaleziono połączenie do: " + flights.get(i).getArrivalAirport() + "\n");
-        } catch (RouteNotFoundException r){
-            r.answer();
-        } finally {
-            System.out.println("Czy chcesz wyszukac inne połączenie?");
-        }
+
+        for (int i = 0; i < flights.size(); i++)
+            try {
+                System.out.println("\nWyszukuję połączenie do: " + flights.get(i).getArrivalAirport());
+                flightFinder.findFlight(flights.get(i));
+                System.out.println("Znaleziono połączenie do: " + flights.get(i).getArrivalAirport() + "\n");
+
+            } catch (RouteNotFoundException r) {
+                String message = r.getMessage();
+                System.out.println(message);
+
+            } finally {
+                System.out.println("Czy chcesz wyszukac inne połączenie?");
+            }
 
     }
 }
