@@ -31,8 +31,7 @@ public final class MovieStore {
     }
 
     public void printList(){
-        MovieStore movieStore = new MovieStore();
-        movieStore.getMovies().entrySet().stream()
+        MovieStore.getMovies().entrySet().stream()
                 .map(Map.Entry::getValue)
                 .map(s -> s + "!")
                 .forEach(System.out::print);
