@@ -35,6 +35,5 @@ public final class MovieStore {
                 .map(Map.Entry::getValue)
                 .map(s -> s + "!")
                 .forEach(System.out::print);
-
     }
 }
