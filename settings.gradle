@@ -9,4 +9,5 @@ include 'kodilla-stream'
 include 'kodilla-exception'
 include 'kodilla-exception1'
 include 'kodilla-exception1'
+include 'kodilla-good-patterns'
 
