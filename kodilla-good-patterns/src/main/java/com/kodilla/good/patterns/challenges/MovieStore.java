@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public final class MovieStore {
 
-    private static final Map<String, List<String>> booksTitlesWithTranslations = new HashMap<>();
+    private final static Map<String, List<String>> booksTitlesWithTranslations = new HashMap<>();
 
-    private static final Map<String, List<String>> getMovies() {
+    private final static Map<String, List<String>> getMovies() {
 
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");
@@ -31,9 +33,11 @@ public final class MovieStore {
     }
 
     public void printList(){
-        MovieStore.getMovies().entrySet().stream()
-                .map(Map.Entry::getValue)
-                .map(s -> s + "!")
+
+       MovieStore.getMovies().entrySet().stream()
+                .map(m -> m.getValue())
+                .flatMap(List::stream)
+                .map(s -> s + " ! ")
                 .forEach(System.out::print);
     }
 }
