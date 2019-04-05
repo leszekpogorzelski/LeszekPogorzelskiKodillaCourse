@@ -7,7 +7,7 @@ public class OrderRetriver {
 
     public Order retrive1() {
         OrderProcess orderProcess = new OrderProcess("Zamówienie zostało złożone w sklepie ExtraFood Shoop");
-        FoodSupplier foodSupplier1 = new FoodSupplier("ExtraFoodShop",
+        FoodSupplier foodSupplier1 = new FoodSupplier("ExtraFoodShop ",
                 "ul. Kasztanowa 1", orderProcess);
 
         Map<Integer, String> products = new HashMap<>();
