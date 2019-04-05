@@ -31,8 +31,7 @@ public class Main {
                 System.out.println("Znaleziono połączenie do: " + flights.get(i).getArrivalAirport() + "\n");
 
             } catch (RouteNotFoundException r) {
-                String message = r.getMessage();
-                System.out.println(message);
+                System.out.println(r.getMessage());
 
             } finally {
                 System.out.println("Czy chcesz wyszukac inne połączenie?");
