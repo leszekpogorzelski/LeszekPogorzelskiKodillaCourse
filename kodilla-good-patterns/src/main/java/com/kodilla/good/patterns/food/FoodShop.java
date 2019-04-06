@@ -2,11 +2,11 @@ package com.kodilla.good.patterns.food;
 
 import java.util.Map;
 
-public interface FoodOrder {
+public interface FoodShop {
 
-    FoodSupplier getFoodSupplier();
+    String getFoodSupplier();
 
     Map<Integer, String> getProducts();
 
-    String proces();
+    String process();
 }

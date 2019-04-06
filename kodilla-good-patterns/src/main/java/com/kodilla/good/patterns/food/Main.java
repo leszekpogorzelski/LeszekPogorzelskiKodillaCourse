@@ -6,9 +6,10 @@ public class Main {
 
         OrderRetriver orderRetriver = new OrderRetriver();
         Order order = orderRetriver.retrive1();
-        System.out.println(order.getFoodSupplier().getCompanyName() + "\n"
-                + order.getFoodSupplier().getAddress() + "\n");
-        System.out.println(order.getProducts().entrySet() + "\n" + order.proces());
+        System.out.println(order.getFoodShop().getFoodSupplier());
+        System.out.println(order.getFoodShop().getProducts().entrySet());
+        System.out.println(order.getFoodShop().process());
+
 
     }
 }

@@ -12,7 +12,7 @@ public class ProductsOrdered {
         this.productOrder = map;
     }
 
-    public final Map<Integer, String> getProductsOrdered() {
+    public final Map<Integer, String> getProductsOrdered1() {
         return new HashMap<>(productOrder);
     }
 
