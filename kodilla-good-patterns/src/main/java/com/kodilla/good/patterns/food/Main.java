@@ -8,7 +8,13 @@ public class Main {
         Order order = orderRetriver.retrive1();
         System.out.println(order.getFoodShop().getFoodSupplier());
         System.out.println(order.getFoodShop().getProducts().entrySet());
-        System.out.println(order.getFoodShop().process());
+
+        OrderProcessor orderProcessor = new OrderProcessor(order);
+        if(orderProcessor.orderProcessed()) {
+            System.out.println("\nZlecenie przyjęte do relizacji");
+        } else {
+            System.out.println("Awaria systemu!");
+        }
 
 
     }
