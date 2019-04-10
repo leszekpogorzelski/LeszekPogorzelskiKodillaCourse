@@ -47,7 +47,6 @@ public final class FlightFinder  {
         String przesiadka = duplicates.toString();
         int x = przesiadka.length();
         String przesiadka2 =  przesiadka.substring(1,x-1);
-        System.out.println(przesiadka2);
 
         flightDestinations.entrySet().stream()
                 .map(Map.Entry::getKey)
