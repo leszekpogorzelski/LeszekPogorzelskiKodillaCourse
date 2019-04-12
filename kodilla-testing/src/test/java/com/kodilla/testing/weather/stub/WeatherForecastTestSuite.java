@@ -1,4 +1,5 @@
 package com.kodilla.testing.weather.stub;
+
 import org.junit.*;
 
 public class WeatherForecastTestSuite {

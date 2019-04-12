@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.flightSearch;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         FlightDataBase flightDataBase = new FlightDataBase();
         flightDataBase.createDataBase();

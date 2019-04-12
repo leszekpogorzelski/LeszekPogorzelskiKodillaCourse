@@ -1,4 +1,5 @@
 package com.kodilla.testing.collection;
+
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -23,23 +24,24 @@ public class CollectionTestSuite {
     public static void afterClass() {
         System.out.println("Test suite: End!");
     }
+
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             numbers.add(i);
         }
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //When
         oddNumbersExterminator.exterminate(numbers);
         System.out.println("Testing:");
-        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++ ) {
-               System.out.print(oddNumbersExterminator.getOddNumbers(i) + ", ");
+        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++) {
+            System.out.print(oddNumbersExterminator.getOddNumbers(i) + ", ");
         }
         System.out.println();
         //Then
-       for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++){
+        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++) {
             Assert.assertEquals((oddNumbersExterminator.getOddNumbers(i) % 2 == 0), true);
         }
     }
@@ -53,13 +55,13 @@ public class CollectionTestSuite {
         //When
         oddNumbersExterminator.exterminate(numbers);
         System.out.println("Testing:");
-        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++ ) {
+        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++) {
             System.out.print(oddNumbersExterminator.getOddNumbers(i) + ", ");
         }
         System.out.println();
         //Then
-        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++){
-            Assert.assertEquals((oddNumbersExterminator.getOddNumbers(i)%2 == 0), true);
+        for (int i = 0; i < oddNumbersExterminator.getOddNumbersSize(); i++) {
+            Assert.assertEquals((oddNumbersExterminator.getOddNumbers(i) % 2 == 0), true);
         }
 
     }

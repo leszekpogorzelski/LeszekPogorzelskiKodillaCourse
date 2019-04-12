@@ -36,18 +36,18 @@ public class LibraryTestSuite {
         //do nothing
     }
 
-/*    @Test
-    public void testContext() {
-        //Given
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(LibraryConfig.class);
+    /*    @Test
+        public void testContext() {
+            //Given
+            ApplicationContext context =
+                    new AnnotationConfigApplicationContext(LibraryConfig.class);
 
-        //When & Then
-        System.out.println("===== Beans list: ==== >>");
-        Arrays.stream(context.getBeanDefinitionNames())
-                .forEach(System.out::println);
-        System.out.println("<< ===== Beans list ====");
-    }*/
+            //When & Then
+            System.out.println("===== Beans list: ==== >>");
+            Arrays.stream(context.getBeanDefinitionNames())
+                    .forEach(System.out::println);
+            System.out.println("<< ===== Beans list ====");
+        }*/
     @Test
     public void testContext1() {
         //Given

@@ -21,10 +21,10 @@ public class FirstChallenge {
 
         try {
             double result = firstChallenge.divide(3, 0);
-    } catch (ArithmeticException a) {
+        } catch (ArithmeticException a) {
             error = "Wykryto próbę dzielenia przez zero!";
         } finally {
             System.out.println(error + "\nCzy chcesz wyjkonać kolejne działanie?");
         }
-        }
+    }
 }

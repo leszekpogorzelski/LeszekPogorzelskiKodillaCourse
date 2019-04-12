@@ -32,9 +32,9 @@ public final class MovieStore {
         return new HashMap<String, List<String>>(booksTitlesWithTranslations);
     }
 
-    public void printList(){
+    public void printList() {
 
-       MovieStore.getMovies().entrySet().stream()
+        MovieStore.getMovies().entrySet().stream()
                 .map(m -> m.getValue())
                 .flatMap(List::stream)
                 .map(s -> s + " ! ")

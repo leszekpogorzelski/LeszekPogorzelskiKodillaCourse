@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.food;
 
 import java.util.Map;
 
-public class HealthyShop  implements FoodShop {
+public class HealthyShop implements FoodShop {
 
     private String companyName;
     private String address;

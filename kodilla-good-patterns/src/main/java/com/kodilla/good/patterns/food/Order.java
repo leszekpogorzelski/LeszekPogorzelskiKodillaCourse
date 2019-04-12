@@ -4,7 +4,7 @@ public class Order {
     private FoodShop foodShop;
 
 
-    public Order(FoodShop foodShop){
+    public Order(FoodShop foodShop) {
         this.foodShop = foodShop;
     }
 

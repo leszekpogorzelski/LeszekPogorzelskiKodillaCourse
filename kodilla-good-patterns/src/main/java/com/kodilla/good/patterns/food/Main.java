@@ -10,7 +10,7 @@ public class Main {
         System.out.println(order.getFoodShop().getProducts().entrySet());
 
         OrderProcessor orderProcessor = new OrderProcessor(order);
-        if(orderProcessor.orderProcessed()) {
+        if (orderProcessor.orderProcessed()) {
             System.out.println("\nZlecenie przyjęte do relizacji");
         } else {
             System.out.println("Awaria systemu!");

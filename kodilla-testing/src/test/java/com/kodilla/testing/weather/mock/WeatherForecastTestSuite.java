@@ -1,15 +1,18 @@
 package com.kodilla.testing.weather.mock;
+
 import org.junit.*;
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
 import java.util.*;
 
 public class WeatherForecastTestSuite {
 
     @Test
-        public void testCalculateForecastWithMock() {
+    public void testCalculateForecastWithMock() {
         //Given
         Temperatures temperaturesMock = mock(Temperatures.class);
         HashMap<Integer, Double> temperaturesMap = new HashMap<Integer, Double>();

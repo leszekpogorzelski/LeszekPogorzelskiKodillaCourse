@@ -12,7 +12,7 @@ public class BookLibrary {
     }
 
 
-     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         ArrayList<Book> rentedBooks = (ArrayList<Book>) libraryDatabase.listBooksInHandsOf(libraryUser);
         return rentedBooks;
     }

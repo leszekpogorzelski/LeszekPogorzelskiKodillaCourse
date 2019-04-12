@@ -46,6 +46,7 @@ public class ShapeCollectorTestSuite {
         Assert.assertTrue(result);
         Assert.assertEquals(0, shapeCollector.getShapesSize());
     }
+
     @Test
     public void getFigure() {
         //Given
@@ -75,7 +76,6 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals("circle 2.0", shapeCollector.showFigures(0));
         Assert.assertEquals("square 4.0", shapeCollector.showFigures(1));
     }
-
 
 
 }

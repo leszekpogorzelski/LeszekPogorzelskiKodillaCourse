@@ -16,6 +16,7 @@ public final class ForumUser {
         this.realName = realName;
         this.location = location;
     }
+
     public Set<String> getLocationsOfFriendsOfFriends() {
         return friends.stream()
                 .flatMap(user -> user.getFriends().stream())

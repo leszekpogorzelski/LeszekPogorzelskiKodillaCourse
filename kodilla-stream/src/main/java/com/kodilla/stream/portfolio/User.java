@@ -8,6 +8,7 @@ public final class User {
         this.username = userName;
         this.realName = realName;
     }
+
     public String getUsername() {
         return username;
     }

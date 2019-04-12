@@ -1,8 +1,11 @@
 package com.kodilla.testing.forum.statistics;
+
 import com.kodilla.testing.forum.statistics.Statistics;
 import com.kodilla.testing.forum.statistics.CalculateStatistics;
 import org.junit.*;
+
 import java.util.*;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -26,13 +29,13 @@ public class StatisticsTestSuite {
     }
 
     @Test
-    public void postCountZero(){
+    public void postCountZero() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
-            for (int i = 0; i < 100; i++){
-                users.add("Jan Nowak" + i);
-            }
+        for (int i = 0; i < 100; i++) {
+            users.add("Jan Nowak" + i);
+        }
 
         int postCounter = 0;
         int commentCounter = 100;
@@ -46,15 +49,15 @@ public class StatisticsTestSuite {
         double postCountZeroTest = calculateStatistics.getAveragePostPerUser();
 
         //Then
-        Assert.assertEquals(0.0, postCountZeroTest, 0.1 );
+        Assert.assertEquals(0.0, postCountZeroTest, 0.1);
     }
 
     @Test
-    public void postCountThousandTest(){
+    public void postCountThousandTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             users.add("Jan Nowak" + i);
         }
 
@@ -70,14 +73,15 @@ public class StatisticsTestSuite {
         double postCountThousandTest = calculateStatistics.getAveragePostPerUser();
 
         //Then
-        Assert.assertEquals(10.0, postCountThousandTest, 0.1 );
+        Assert.assertEquals(10.0, postCountThousandTest, 0.1);
     }
+
     @Test
-    public void commentCountZeroTest(){
+    public void commentCountZeroTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             users.add("Jan Nowak" + i);
         }
 
@@ -93,15 +97,15 @@ public class StatisticsTestSuite {
         double commentCountZeroTest = calculateStatistics.getAverageCommentPerUser();
 
         //Then
-        Assert.assertEquals(0.0, commentCountZeroTest, 0.1 );
+        Assert.assertEquals(0.0, commentCountZeroTest, 0.1);
     }
 
     @Test
-    public void commentCountGreaterTest(){
+    public void commentCountGreaterTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             users.add("Jan Nowak" + i);
         }
 
@@ -117,10 +121,11 @@ public class StatisticsTestSuite {
         double commentCountGreaterTest = calculateStatistics.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(10.0, commentCountGreaterTest, 0.1 );
+        Assert.assertEquals(10.0, commentCountGreaterTest, 0.1);
     }
+
     @Test
-    public void userCountZeroTest(){
+    public void userCountZeroTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
@@ -138,16 +143,16 @@ public class StatisticsTestSuite {
         double userCounterZeroTest = calculateStatistics.getAverageCommentPerUser();
 
         //Then
-        Assert.assertEquals(0.0, userCounterZeroTest, 0.1 );
+        Assert.assertEquals(0.0, userCounterZeroTest, 0.1);
     }
 
 
     @Test
-    public void commentCountLessTest(){
+    public void commentCountLessTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         LinkedList<String> users = new LinkedList<String>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             users.add("Jan Nowak" + i);
         }
 
@@ -163,7 +168,7 @@ public class StatisticsTestSuite {
         double commentCountLessTest = calculateStatistics.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(0.5, commentCountLessTest, 0.1 );
+        Assert.assertEquals(0.5, commentCountLessTest, 0.1);
     }
 
 

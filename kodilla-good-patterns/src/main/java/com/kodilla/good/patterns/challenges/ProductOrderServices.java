@@ -9,8 +9,8 @@ public class ProductOrderServices {
     private OrderRepository orderRepository;
 
     public ProductOrderServices(final InformationService informationService,
-                          final OrderService orderService,
-                          final OrderRepository orderRepository) {
+                                final OrderService orderService,
+                                final OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
@@ -20,8 +20,8 @@ public class ProductOrderServices {
         boolean isOrdered = orderService.orderPlaced(orderRequest.getUser(), orderRequest.getProducts(),
                 orderRequest.getLocalDate());
 
-        if(isOrdered) {
-            informationService.informUser (orderRequest.getUser());
+        if (isOrdered) {
+            informationService.informUser(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProducts(), orderRequest.getLocalDate());
             return new OrderDto(orderRequest.getUser(), true);
         } else {

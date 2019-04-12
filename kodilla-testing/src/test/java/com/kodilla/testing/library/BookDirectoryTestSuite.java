@@ -1,4 +1,5 @@
 package com.kodilla.testing.library;
+
 import com.kodilla.testing.library.BookLibrary;
 import com.kodilla.testing.library.LibraryDatabase;
 import com.kodilla.testing.library.Book;
@@ -18,7 +19,7 @@ public class BookDirectoryTestSuite {
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<Book>();
-        for(int n = 1; n <= booksQuantity; n++){
+        for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }
@@ -110,24 +111,26 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOf0books.size());
 
     }
+
     @Test
     public void testlistBooksInHandsOf1() {
 
-    // Given
-    LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
-    BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-    LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalski", "12341212345");
-    List<Book> resultListOf0Books = generateListOfNBooks(1);
-    when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(resultListOf0Books);
+        // Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser1 = new LibraryUser("Jan", "Kowalski", "12341212345");
+        List<Book> resultListOf0Books = generateListOfNBooks(1);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1)).thenReturn(resultListOf0Books);
 
 
-    // When
-    List<Book> theListOf0books = bookLibrary.listBooksInHandsOf(libraryUser1);
-    // Then
+        // When
+        List<Book> theListOf0books = bookLibrary.listBooksInHandsOf(libraryUser1);
+        // Then
 
-    assertEquals(1, theListOf0books.size());
+        assertEquals(1, theListOf0books.size());
 
-}
+    }
+
     @Test
     public void testlistBooksInHandsOf5() {
 

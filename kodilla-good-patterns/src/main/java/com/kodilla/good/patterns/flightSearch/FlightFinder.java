@@ -3,10 +3,10 @@ package com.kodilla.good.patterns.flightSearch;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public final class FlightFinder  {
+public final class FlightFinder {
     private static Map<Flight, Boolean> flightDestinations = new HashMap<>();
 
-    public FlightFinder(Map<Flight, Boolean> flightDestinations){
+    public FlightFinder(Map<Flight, Boolean> flightDestinations) {
         this.flightDestinations = flightDestinations;
     }
 
@@ -33,20 +33,20 @@ public final class FlightFinder  {
                 .map(s -> s.getArrivalAirport())
                 .forEach(search::add);
 
-       flightDestinations.entrySet().stream()
+        flightDestinations.entrySet().stream()
                 .map(Map.Entry::getKey)
                 .filter(f -> f.getArrivalAirport().equals(to))
                 .map(s -> s.getDepartureAirport())
                 .forEach(search::add);
 
-       Set<String> allItems = new HashSet<>();
+        Set<String> allItems = new HashSet<>();
         Set<String> duplicates = search.stream()
                 .filter(n -> !allItems.add(n))
                 .collect(Collectors.toSet());
 
         String przesiadka = duplicates.toString();
         int x = przesiadka.length();
-        String przesiadka2 =  przesiadka.substring(1,x-1);
+        String przesiadka2 = przesiadka.substring(1, x - 1);
 
         flightDestinations.entrySet().stream()
                 .map(Map.Entry::getKey)

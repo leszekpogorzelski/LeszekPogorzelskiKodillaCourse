@@ -8,11 +8,12 @@ import java.util.stream.Collectors;
 public final class Continent {
     private final List<Country> countriesPopulation = new ArrayList<>();
 
-    public void addCountry(Country country){
+    public void addCountry(Country country) {
         countriesPopulation.add(country);
 
     }
-    public List<Country> getCountriesPopulation(){
+
+    public List<Country> getCountriesPopulation() {
         return countriesPopulation;
     }
 

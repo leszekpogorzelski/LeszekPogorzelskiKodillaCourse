@@ -86,6 +86,7 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(3, project.getTaskLists().size());
     }
+
     @Test
     public void testAddTaskListFindUsersTasks() {
         //Given
@@ -121,6 +122,7 @@ public class BoardTestSuite {
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
     }
+
     @Test
     public void testAddTaskListFindLongTasks() {
         //Given
@@ -153,25 +155,25 @@ public class BoardTestSuite {
                 .flatMap(tl -> tl.getTasks().stream())
                 .count();
 
-       long totaldays = project.getTaskLists().stream()
-               .filter(daysSpent::contains)
-               .flatMap(tl -> tl.getTasks().stream())
-               .map(o -> Period.between(o.getCreated(), LocalDate.now()).getDays())
-               .mapToInt(n -> n.intValue()).sum();
-
-    double optionalDouble = project.getTaskLists().stream()
+        long totaldays = project.getTaskLists().stream()
                 .filter(daysSpent::contains)
-               .flatMap(tl -> tl.getTasks().stream())
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(o -> Period.between(o.getCreated(), LocalDate.now()).getDays())
+                .mapToInt(n -> n.intValue()).sum();
+
+        double optionalDouble = project.getTaskLists().stream()
+                .filter(daysSpent::contains)
+                .flatMap(tl -> tl.getTasks().stream())
                 .map(o -> Period.between(o.getCreated(), LocalDate.now()).getDays())
                 .mapToInt(n -> n.intValue())
                 .average().getAsDouble();
 
-        double average = totaldays/expectedProjectCounter;
+        double average = totaldays / expectedProjectCounter;
 
         //Then
-        Assert.assertEquals(3, expectedProjectCounter );
+        Assert.assertEquals(3, expectedProjectCounter);
         Assert.assertEquals(30, totaldays);
-        Assert.assertEquals(10.0, average, 0.01 );
+        Assert.assertEquals(10.0, average, 0.01);
         Assert.assertEquals(10.0, optionalDouble, 0.01);
     }
 

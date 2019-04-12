@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public interface OrderService {
 
-   default boolean orderPlaced(User user, Products products, LocalDate localDate) {
-       return true;
-   }
+    default boolean orderPlaced(User user, Products products, LocalDate localDate) {
+        return true;
+    }
 }

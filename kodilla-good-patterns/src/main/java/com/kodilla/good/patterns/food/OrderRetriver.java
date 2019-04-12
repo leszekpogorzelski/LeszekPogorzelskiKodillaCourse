@@ -13,8 +13,8 @@ public class OrderRetriver {
         ProductsOrdered productsOrdered = new ProductsOrdered(products);
 
         ExtraFoodShop extraFoodShop = new ExtraFoodShop("ExtraFoodShop", "ul. Kasztanowa 51",
-                "Zamówienie zostało złożone w sklepie ExtraFood Shoop!", productsOrdered );
+                "Zamówienie zostało złożone w sklepie ExtraFood Shoop!", productsOrdered);
 
-    return new Order(extraFoodShop);
+        return new Order(extraFoodShop);
     }
 }

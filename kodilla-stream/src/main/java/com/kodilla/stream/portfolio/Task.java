@@ -12,25 +12,27 @@ public final class Task {
     private final LocalDate deadline;
     private Period period;
     LocalDate date = LocalDate.now();
+
     public Task(final String title, final String description,
                 final User assignedUser, final User creator,
                 final LocalDate created, final LocalDate deadline) {
 
-                this.title = title;
-                this.description = description;
-                this.assignedUser = assignedUser;
-                this.creator = creator;
-                this.created = created;
-                this.deadline = deadline;
+        this.title = title;
+        this.description = description;
+        this.assignedUser = assignedUser;
+        this.creator = creator;
+        this.created = created;
+        this.deadline = deadline;
     }
+
     public int getDays() {
 
 
-             if (deadline.isAfter(date)) {
-                period = Period.between(created, date);
-            } else if (deadline.isBefore(date)) {
-                period = Period.between(created, deadline);
-            }
+        if (deadline.isAfter(date)) {
+            period = Period.between(created, date);
+        } else if (deadline.isBefore(date)) {
+            period = Period.between(created, deadline);
+        }
 
 
         return period.getDays();

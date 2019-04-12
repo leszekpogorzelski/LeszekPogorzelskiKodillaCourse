@@ -5,7 +5,7 @@ import java.util.List;
 public class Products {
     private List<String> productsOrder;
 
-    public Products(List <String> productsOrdered){
+    public Products(List<String> productsOrdered) {
         this.productsOrder = productsOrdered;
     }
 

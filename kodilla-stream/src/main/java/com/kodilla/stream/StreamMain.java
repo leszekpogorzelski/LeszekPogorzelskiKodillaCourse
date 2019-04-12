@@ -8,16 +8,13 @@ import java.util.stream.Collectors;
 public class StreamMain {
 
 
-
-
-
     public static void main(String[] args) {
 
         Forum forum = new Forum();
         Map<Integer, ForumUser> filteredMap = forum.getList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
                 .filter(forumUser -> forumUser.getAge() > 20)
-                .filter(forumUser -> forumUser.getPostCount() > 0 )
+                .filter(forumUser -> forumUser.getPostCount() > 0)
                 .collect(Collectors.toMap(ForumUser::getUserdId, forumUser -> forumUser));
 
         System.out.println("# elements: " + filteredMap.size());

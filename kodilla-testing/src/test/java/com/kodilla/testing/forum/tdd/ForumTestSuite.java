@@ -10,28 +10,28 @@ public class ForumTestSuite {
     private static int testCounter = 0;
 
     @BeforeClass
-        public static void beforeAllTests() {
-            System.out.println("This is the beginning of test.");
+    public static void beforeAllTests() {
+        System.out.println("This is the beginning of test.");
     }
 
     @AfterClass
-        public static void afterAllTests() {
-            System.out.println("All test are finished.");
+    public static void afterAllTests() {
+        System.out.println("All test are finished.");
     }
 
     @Before
-        public void beforeEveryTest() {
-            testCounter++;
-            System.out.println("Preparing to execute test #" + testCounter);
+    public void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
     }
 
     @Test
-        public void testAddPost() {
+    public void testAddPost() {
         //Given
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
 
         //When
-        forumUser.addPost("mrsmith","Hello everyone, this is my first contribution here!");
+        forumUser.addPost("mrsmith", "Hello everyone, this is my first contribution here!");
 
         //Then
         Assert.assertEquals(1, forumUser.getPostsQuantity());
@@ -83,6 +83,7 @@ public class ForumTestSuite {
         //Then
         Assert.assertEquals(theComment, retrievedComment);
     }
+
     @Test
     public void testRemovePostNotExisting() {
         //Given
@@ -96,6 +97,7 @@ public class ForumTestSuite {
         //Then
         Assert.assertFalse(result);
     }
+
     @Test
     public void testRemoveCommentNotExisting() {
         //Given

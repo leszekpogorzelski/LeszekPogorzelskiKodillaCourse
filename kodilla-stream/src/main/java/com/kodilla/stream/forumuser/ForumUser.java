@@ -19,10 +19,10 @@ public final class ForumUser {
         this.postCount = postCount;
     }
 
-    public int getAge(){
-    Period period = Period.between(dateOfBirth, today);
-    return period.getYears();
-}
+    public int getAge() {
+        Period period = Period.between(dateOfBirth, today);
+        return period.getYears();
+    }
 
     public int getUserdId() {
         return userdId;

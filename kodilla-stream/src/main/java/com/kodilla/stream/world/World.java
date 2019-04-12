@@ -9,7 +9,7 @@ public final class World {
 
     private final List<Continent> continentsPopulation = new ArrayList<>();
 
-    public void addContinent(Continent continent){
+    public void addContinent(Continent continent) {
         continentsPopulation.add(continent);
 
     }
@@ -21,5 +21,5 @@ public final class World {
                 .collect(Collectors.toList()).stream()
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 
-         }
+    }
 }

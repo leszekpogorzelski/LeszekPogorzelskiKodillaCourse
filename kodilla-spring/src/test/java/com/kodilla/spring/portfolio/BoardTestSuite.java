@@ -17,10 +17,10 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-       Board board = context.getBean(Board.class);
-       board.getToDoList().add("To do");
-       board.getDoneList().add("Done");
-       board.getInProgressList().add("In progress!");
+        Board board = context.getBean(Board.class);
+        board.getToDoList().add("To do");
+        board.getDoneList().add("Done");
+        board.getInProgressList().add("In progress!");
 
         //When
         System.out.println(board.getToDoList().get(0));

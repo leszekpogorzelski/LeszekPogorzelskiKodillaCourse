@@ -44,28 +44,28 @@ public class CalculateStatistics {
         }
     }
 
-        public double getPostCounter () {
-            return postCounter;
-        }
-
-        public double getUserCounter () {
-            return userCounter;
-        }
-
-        public double getCommentCounter () {
-            return commentCounter;
-        }
-
-        public double getAveragePostPerUser () {
-            return averagePostPerUser;
-        }
-
-        public double getAverageCommentPerUser () {
-            return averageCommentPerUser;
-        }
-
-        public double getAverageCommentPerPost () {
-            return averageCommentPerPost;
-        }
+    public double getPostCounter() {
+        return postCounter;
     }
+
+    public double getUserCounter() {
+        return userCounter;
+    }
+
+    public double getCommentCounter() {
+        return commentCounter;
+    }
+
+    public double getAveragePostPerUser() {
+        return averagePostPerUser;
+    }
+
+    public double getAverageCommentPerUser() {
+        return averageCommentPerUser;
+    }
+
+    public double getAverageCommentPerPost() {
+        return averageCommentPerPost;
+    }
+}
 

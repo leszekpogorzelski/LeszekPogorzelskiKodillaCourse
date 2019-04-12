@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OrderRequestRetriver {
 
-    public OrderRequest retrive(){
+    public OrderRequest retrive() {
         List<String> productsOrdered = new ArrayList();
         productsOrdered.add("Rower");
         productsOrdered.add("Latarka");
